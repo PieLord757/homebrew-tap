@@ -25,7 +25,9 @@ cask "claude-pet" do
   ]
 
   caveats <<~EOS
-    Claude Pet isn't notarized yet. If macOS blocks the first launch,
-    right-click ClaudePet in Applications and choose Open.
+    Claude Pet isn't notarized yet, so macOS blocks the first launch.
+    Allow it once in System Settings > Privacy & Security > Open Anyway,
+    or run:
+      xattr -dr com.apple.quarantine #{appdir}/ClaudePet.app
   EOS
 end
